@@ -33,22 +33,23 @@
 }
 
 /** "tags supported" is exactly the set of all SVGElement subclasses that already exist */
+/** make it an unknown path so svg can still render */
 -(NSArray*) supportedTags
 {
-	return [NSMutableArray arrayWithObjects:@"pattern", nil];
+	return [NSMutableArray arrayWithObjects:@"patterns", nil];
 }
 
 - (Node*)handleStartElement:(NSString *)name document:(SVGKSource*) document namePrefix:(NSString*)prefix namespaceURI:(NSString*) XMLNSURI attributes:(NSMutableDictionary *)attributes parseResult:(SVGKParseResult*) parseResult parentNode:(Node*) parentNode
 {
-		
+
 	NSAssert( FALSE, @"Patterns are not supported by SVGKit yet - no-one has implemented them" );
-	
+
 	return nil;
 }
 
 -(void)handleEndElement:(Node *)newNode document:(SVGKSource *)document parseResult:(SVGKParseResult *)parseResult
 {
-	
+
 }
 
 @end
